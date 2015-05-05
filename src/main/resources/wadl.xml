@@ -1,0 +1,5 @@
+<jaxrs:server address="/rest" docLocation="wadl/bookStore.wadl" publishedEndpointUrl="aaaaaaa">
+   <jaxrs:serviceBeans>
+      <bean class="org.bar.generated.BookStore"/>
+   </jaxrs:serviceBeans>
+</jaxrs:server>
