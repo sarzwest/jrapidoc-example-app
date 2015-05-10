@@ -68,13 +68,13 @@ public class WithJRAPIDocAnnotations {
         return null;
     }
 
-@WebResult(name = "customName")
-@DocDescription("Example operation")
-@DocReturns({
-        @DocReturn(description = "Expected result of operation", typeDescription = "Represents flight destination"),
-        @DocReturn(http = 500, description = "When flight ID is not valid", type = AirserviceFault.class, typeDescription = "Business logic exception")}
-)
-public Destination foo4b(@DocIsRequired @DocDescription("ID of flight") @WebParam(mode = WebParam.Mode.INOUT, header = true) Holder<String> flightId)throws AirserviceFault{
-    return null;
-}
+    @WebResult(name = "customName")
+    @DocDescription("Example operation")
+    @DocReturns({
+            @DocReturn(description = "Expected result of operation", typeDescription = "Represents flight destination"),
+            @DocReturn(http = 500, description = "When flight ID is not valid", type = AirserviceFault.class, typeDescription = "Business logic exception")}
+    )
+    public Destination foo4b(@DocIsRequired @DocDescription("ID of flight") @WebParam(mode = WebParam.Mode.INOUT, header = true) Holder<String> flightId)throws AirserviceFault{
+        return null;
+    }
 }

@@ -50,8 +50,8 @@ public class WithJRAPIDocAnnotationsResource {
             typeDescription = "Description of returned type in response"
     )
     public Response pathExampleAnnotation(@DocDescription("Parameter is not required")@DocIsRequired(false)@MatrixParam("matrixParam")String m) {
-        return Response.status(Response.Status.OK).header("X-Custom", null).header("Y-Custom", null)
-                .cookie(new NewCookie("token", null)).entity(new Destination()).build();
+        return Response.status(Response.Status.OK).header("X-Custom", "example").header("Y-Custom", "example")
+                .cookie(new NewCookie("token", "example")).entity(new Destination()).build();
     }
 
     @PUT
