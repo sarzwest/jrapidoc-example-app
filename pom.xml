@@ -192,6 +192,7 @@
                     <webResources>
                         <resource>
                             <directory>${project.build.directory}/generated-sources/jrapidoc</directory>
+                            <targetPath>jrapidoc/</targetPath>
                         </resource>
                     </webResources>
                 </configuration>
