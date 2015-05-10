@@ -131,7 +131,7 @@
                         <group>
                             <baseUrl>http://urlvole</baseUrl>
                             <includes>
-                                <include>airservice.jaxws.test.jrapidoc</include>
+                                <include>org</include>
                             </includes>
                             <excludes>
                                 <exclude>takynejake.package</exclude>
