@@ -1,12 +1,13 @@
 {
   "customInfo" : {
-    "appVersion" : "1.0-snapshot",
+    "appVersion" : "1.0",
     "developerName" : "Sarzwest",
+    "hereCanBePlacedInfinityCustomProperties" : "Hello :-)",
     "jrapidoc-rest-plugin" : "1.0-SNAPSHOT"
   },
   "serviceGroups" : {
-    "http://localhost:8080/example" : {
-      "baseUrl" : "http://localhost:8080/example",
+    "http://localhost:8080/example/rest" : {
+      "baseUrl" : "http://localhost:8080/example/rest",
       "serviceGroupDescription" : "Description of service group",
       "services" : {
         "annotations" : {
@@ -1094,9 +1095,6 @@
     "string" : {
       "typeRef" : "string"
     },
-    "boolean" : {
-      "typeRef" : "boolean"
-    },
     "org.jrapidoc.example.entity.Destination" : {
       "typeRef" : "org.jrapidoc.example.entity.Destination",
       "attributes" : {
@@ -1108,9 +1106,9 @@
         }
       }
     },
-    "array<org.jrapidoc.example.entity.DestinationEntity>" : {
-      "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
-      "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+    "array<org.jrapidoc.example.entity.Destination>" : {
+      "typeRef" : "array<org.jrapidoc.example.entity.Destination>",
+      "includeTypeRef" : "org.jrapidoc.example.entity.Destination"
     },
     "org.jrapidoc.example.entity.DestinationEntity" : {
       "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
@@ -1131,6 +1129,40 @@
     },
     "number" : {
       "typeRef" : "number"
+    },
+    "boolean" : {
+      "typeRef" : "boolean"
+    },
+    "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>" : {
+      "typeRef" : "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>",
+      "attributes" : {
+        "varInWrapper" : {
+          "attributeName" : "varInWrapper",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "destO" : {
+          "attributeName" : "destO",
+          "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+          "required" : false
+        }
+      }
+    },
+    "map<string,string>" : {
+      "typeRef" : "map<string,string>",
+      "keyTypeRef" : "string",
+      "valueTypeRef" : "string"
+    },
+    "array<string>" : {
+      "typeRef" : "array<string>",
+      "includeTypeRef" : "string"
+    },
+    "java.lang.Object" : {
+      "typeRef" : "java.lang.Object"
+    },
+    "array<org.jrapidoc.example.entity.DestinationEntity>" : {
+      "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+      "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
     },
     "map<string,org.jrapidoc.example.entity.Destination>" : {
       "typeRef" : "map<string,org.jrapidoc.example.entity.Destination>",
@@ -1171,37 +1203,6 @@
           "required" : false
         }
       }
-    },
-    "array<org.jrapidoc.example.entity.Destination>" : {
-      "typeRef" : "array<org.jrapidoc.example.entity.Destination>",
-      "includeTypeRef" : "org.jrapidoc.example.entity.Destination"
-    },
-    "array<string>" : {
-      "typeRef" : "array<string>",
-      "includeTypeRef" : "string"
-    },
-    "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>" : {
-      "typeRef" : "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>",
-      "attributes" : {
-        "varInWrapper" : {
-          "attributeName" : "varInWrapper",
-          "typeRef" : "string",
-          "required" : false
-        },
-        "destO" : {
-          "attributeName" : "destO",
-          "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
-          "required" : false
-        }
-      }
-    },
-    "map<string,string>" : {
-      "typeRef" : "map<string,string>",
-      "keyTypeRef" : "string",
-      "valueTypeRef" : "string"
-    },
-    "java.lang.Object" : {
-      "typeRef" : "java.lang.Object"
     }
   }
 }
