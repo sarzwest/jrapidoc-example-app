@@ -37,6 +37,15 @@
         <servlet-name>Simple</servlet-name>
         <url-pattern>/jaxws/services/Simple</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <display-name>MessageRPCStyle</display-name>
+        <servlet-name>MessageRPCStyle</servlet-name>
+        <servlet-class>org.jrapidoc.example.service.MessageRPCStyle</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MessageRPCStyle</servlet-name>
+        <url-pattern>/jaxws/services/rpc/MessageRPCStyle</url-pattern>
+    </servlet-mapping>
     <filter>
         <filter-name>Resteasy</filter-name>
         <filter-class>org.jboss.resteasy.plugins.server.servlet.FilterDispatcher</filter-class>

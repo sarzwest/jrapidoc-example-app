@@ -12,14 +12,22 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jrapidoc.version>1.0-SNAPSHOT</jrapidoc.version>
     </properties>
 
     <dependencies>
+        <!--JRAPIDoc begin-->
         <dependency>
             <groupId>org.jrapidoc</groupId>
             <artifactId>jrapidoc-annotation</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${jrapidoc.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.jrapidoc</groupId>
+            <artifactId>jrapidoc-model</artifactId>
+            <version>${jrapidoc.version}</version>
+        </dependency>
+        <!--JRAPIDoc end-->
         <!--JMS Rest Interface BEGIN-->
         <dependency>
             <groupId>org.hornetq.rest</groupId>
@@ -96,6 +104,11 @@
             <version>1.4</version>
         </dependency>
         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.3.2</version>
+        </dependency>
+        <dependency>
             <groupId>org.apache.cxf</groupId>
             <artifactId>cxf-api</artifactId>
             <version>2.7.3</version>
@@ -118,7 +131,7 @@
             <plugin>
                 <groupId>org.jrapidoc</groupId>
                 <artifactId>jrapidoc-soap-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${jrapidoc.version}</version>
                 <executions>
                     <execution>
                         <goals>
@@ -127,26 +140,59 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <!--optional-->
+                    <custom>
+                        <appVersion>1.0</appVersion>
+                        <developerName>Sarzwest</developerName>
+                        <hereCanBePlacedInfinityCustomProperties>Hello :-)</hereCanBePlacedInfinityCustomProperties>
+                    </custom>
                     <groups>
                         <group>
-                            <baseUrl>http://urlvole</baseUrl>
+                            <baseUrl>http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services</baseUrl>
+                            <!--optional-->
+                            <description>Not RPC web services</description>
                             <includes>
                                 <include>org</include>
                             </includes>
+                            <!--optional-->
                             <excludes>
-                                <exclude>takynejake.package</exclude>
+                                <exclude>org.jrapidoc.example.service.MessageRPCStyle</exclude>
+                            </excludes>
+                        </group>
+                        <group>
+                            <baseUrl>http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services/rpc</baseUrl>
+                            <!--optional-->
+                            <description>Only RPC web services</description>
+                            <includes>
+                                <include>org</include>
+                            </includes>
+                            <!--optional-->
+                            <excludes>
+                                <exclude>org.jrapidoc.example.service.Simple</exclude>
+                                <exclude>org.jrapidoc.example.service.WithJRAPIDocAnnotations</exclude>
+                                <exclude>also.package.name.can.be.placed.here</exclude>
                             </excludes>
                         </group>
                     </groups>
+                    <!--optional-->
                     <!--<modelHandlers>-->
-                    <!--<modelHandler>org.jrapidoc.model.handler.AvoidSoapOneWayMethodsHandler</modelHandler>-->
+                        <!--<modelHandler>org.jrapidoc.example.custom.AvoidSoapOneWayMethodsHandler</modelHandler>-->
                     <!--</modelHandlers>-->
+                    <!--optional, here can be placed one of type provider class, which is responsible for creating data types -->
+                    <!--for REST is default type provider org.jrapidoc.model.type.provider.JacksonJsonProvider-->
+                    <!--for SOAP is default type provider org.jrapidoc.model.type.provider.JacksonJaxbProvider-->
+                    <typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbJsonProvider</typeProviderClass>
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonProvider</typeProviderClass>-->
+                    <!--You can also implement your own type provider. If needed, you have to inherit class below-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.TypeProvider</typeProviderClass>-->
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.jrapidoc</groupId>
                 <artifactId>jrapidoc-rest-plugin</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${jrapidoc.version}</version>
                 <executions>
                     <execution>
                         <id>run</id>
@@ -156,13 +202,16 @@
                     </execution>
                 </executions>
                 <configuration>
+                    <!--optional-->
                     <custom>
-                        <appVersion>1.0-snapshot</appVersion>
+                        <appVersion>1.0</appVersion>
                         <developerName>Sarzwest</developerName>
+                        <hereCanBePlacedInfinityCustomProperties>Hello :-)</hereCanBePlacedInfinityCustomProperties>
                     </custom>
                     <groups>
                         <group>
-                            <baseUrl>http://localhost:8080/example</baseUrl>
+                            <baseUrl>http://localhost:8080/example/rest</baseUrl>
+                            <!--optional-->
                             <description>Description of service group</description>
                             <includes>
                                 <include>org.jrapidoc.example.resource</include>
@@ -177,10 +226,17 @@
                     </groups>
                     <!--optional-->
                     <modelHandlers>
-                        <modelHandler>org.jrapidoc.model.handler.CheckRestMethodDescriptionHandler</modelHandler>
+                        <modelHandler>org.jrapidoc.example.custom.CheckRestMethodDescriptionHandler</modelHandler>
                     </modelHandlers>
-                    <!--optional-->
-                    <!--<typeProviderClass>org.jrapidoc.CustomTypeProvider</typeProviderClass>-->
+                    <!--optional, here can be placed one of type provider class, which is responsible for creating data types -->
+                    <!--for REST is default type provider org.jrapidoc.model.type.provider.JacksonJsonProvider-->
+                    <!--for SOAP is default type provider org.jrapidoc.model.type.provider.JacksonJaxbProvider-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbJsonProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonProvider</typeProviderClass>-->
+                    <!--You can also implement your own type provider. If needed, you have to inherit class below-->
+                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.TypeProvider</typeProviderClass>-->
                 </configuration>
             </plugin>
             <plugin>
