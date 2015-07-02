@@ -4,7 +4,7 @@
 
     <groupId>org.jrapidoc</groupId>
     <artifactId>jrapidoc-example-app</artifactId>
-    <version>1.0</version>
+    <version>0.0.1</version>
     <packaging>war</packaging>
 
     <name>example-app</name>
@@ -12,18 +12,18 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jrapidoc.version>1.0-SNAPSHOT</jrapidoc.version>
+        <jrapidoc.version>0.0.1</jrapidoc.version>
     </properties>
 
     <dependencies>
         <!--JRAPIDoc begin-->
         <dependency>
-            <groupId>org.jrapidoc</groupId>
+            <groupId>org.projectodd.jrapidoc</groupId>
             <artifactId>jrapidoc-annotation</artifactId>
             <version>${jrapidoc.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.jrapidoc</groupId>
+            <groupId>org.projectodd.jrapidoc</groupId>
             <artifactId>jrapidoc-model</artifactId>
             <version>${jrapidoc.version}</version>
         </dependency>
@@ -129,7 +129,7 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.jrapidoc</groupId>
+                <groupId>org.projectodd.jrapidoc</groupId>
                 <artifactId>jrapidoc-soap-plugin</artifactId>
                 <version>${jrapidoc.version}</version>
                 <executions>
@@ -179,18 +179,18 @@
                         <!--<modelHandler>org.jrapidoc.example.custom.AvoidSoapOneWayMethodsHandler</modelHandler>-->
                     <!--</modelHandlers>-->
                     <!--optional, here can be placed one of type provider class, which is responsible for creating data types -->
-                    <!--for REST is default type provider org.jrapidoc.model.type.provider.JacksonJsonProvider-->
-                    <!--for SOAP is default type provider org.jrapidoc.model.type.provider.JacksonJaxbProvider-->
-                    <typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbJsonProvider</typeProviderClass>
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbProvider</typeProviderClass>-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonJaxbProvider</typeProviderClass>-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonProvider</typeProviderClass>-->
+                    <!--for REST is default type provider org.projectodd.jrapidoc.model.type.provider.JacksonJsonProvider-->
+                    <!--for SOAP is default type provider org.projectodd.jrapidoc.model.type.provider.JacksonJaxbProvider-->
+                    <typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJaxbJsonProvider</typeProviderClass>
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJsonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJsonProvider</typeProviderClass>-->
                     <!--You can also implement your own type provider. If needed, you have to inherit class below-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.TypeProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.TypeProvider</typeProviderClass>-->
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.jrapidoc</groupId>
+                <groupId>org.projectodd.jrapidoc</groupId>
                 <artifactId>jrapidoc-rest-plugin</artifactId>
                 <version>${jrapidoc.version}</version>
                 <executions>
@@ -229,14 +229,14 @@
                         <modelHandler>org.jrapidoc.example.custom.CheckRestMethodDescriptionHandler</modelHandler>
                     </modelHandlers>
                     <!--optional, here can be placed one of type provider class, which is responsible for creating data types -->
-                    <!--for REST is default type provider org.jrapidoc.model.type.provider.JacksonJsonProvider-->
-                    <!--for SOAP is default type provider org.jrapidoc.model.type.provider.JacksonJaxbProvider-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbJsonProvider</typeProviderClass>-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJaxbProvider</typeProviderClass>-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonJaxbProvider</typeProviderClass>-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.JacksonJsonProvider</typeProviderClass>-->
+                    <!--for REST is default type provider org.projectodd.jrapidoc.model.type.provider.JacksonJsonProvider-->
+                    <!--for SOAP is default type provider org.projectodd.jrapidoc.model.type.provider.JacksonJaxbProvider-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJaxbJsonProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJsonJaxbProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.JacksonJsonProvider</typeProviderClass>-->
                     <!--You can also implement your own type provider. If needed, you have to inherit class below-->
-                    <!--<typeProviderClass>org.jrapidoc.model.type.provider.TypeProvider</typeProviderClass>-->
+                    <!--<typeProviderClass>org.projectodd.jrapidoc.model.type.provider.TypeProvider</typeProviderClass>-->
                 </configuration>
             </plugin>
             <plugin>

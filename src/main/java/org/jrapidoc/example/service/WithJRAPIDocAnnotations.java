@@ -1,9 +1,9 @@
 package org.jrapidoc.example.service;
 
-import org.jrapidoc.annotation.DocDescription;
-import org.jrapidoc.annotation.rest.DocIsRequired;
-import org.jrapidoc.annotation.soap.DocReturn;
-import org.jrapidoc.annotation.soap.DocReturns;
+import org.projectodd.jrapidoc.annotation.DocDescription;
+import org.projectodd.jrapidoc.annotation.rest.DocIsRequired;
+import org.projectodd.jrapidoc.annotation.soap.DocReturn;
+import org.projectodd.jrapidoc.annotation.soap.DocReturns;
 import org.jrapidoc.example.entity.Destination;
 import org.jrapidoc.example.exception.AirserviceFault;
 

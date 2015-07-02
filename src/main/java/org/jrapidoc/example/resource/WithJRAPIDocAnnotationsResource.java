@@ -1,13 +1,13 @@
 package org.jrapidoc.example.resource;
 
-import org.jrapidoc.annotation.DocDescription;
-import org.jrapidoc.annotation.rest.DocIsRequired;
-import org.jrapidoc.annotation.rest.DocPathExample;
-import org.jrapidoc.annotation.rest.DocReturn;
-import org.jrapidoc.annotation.rest.DocReturns;
 import org.jrapidoc.example.entity.Destination;
 import org.jrapidoc.example.entity.DestinationEntity;
 import org.jrapidoc.example.exception.CustomException;
+import org.projectodd.jrapidoc.annotation.DocDescription;
+import org.projectodd.jrapidoc.annotation.rest.DocIsRequired;
+import org.projectodd.jrapidoc.annotation.rest.DocPathExample;
+import org.projectodd.jrapidoc.annotation.rest.DocReturn;
+import org.projectodd.jrapidoc.annotation.rest.DocReturns;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.NewCookie;

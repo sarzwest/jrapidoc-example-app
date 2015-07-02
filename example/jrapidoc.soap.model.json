@@ -1,0 +1,884 @@
+{
+  "customInfo" : {
+    "appVersion" : "1.0",
+    "developerName" : "Sarzwest",
+    "hereCanBePlacedInfinityCustomProperties" : "Hello :-)",
+    "jrapidoc-soap-plugin" : "0.0.1"
+  },
+  "serviceGroups" : {
+    "http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services" : {
+      "baseUrl" : "http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services",
+      "serviceGroupDescription" : "Not RPC web services",
+      "services" : {
+        "SimpleService" : {
+          "serviceName" : "SimpleService",
+          "methods" : {
+            "divide" : {
+              "operationName" : "divide",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "LITERAL",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "number"
+                }
+              }, {
+                "type" : {
+                  "typeRef" : "number"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "number"
+                  }
+                } ]
+              }, {
+                "httpStatus" : 500,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+                    "attributes" : {
+                      "faultInfo" : {
+                        "attributeName" : "faultInfo",
+                        "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "explicitName" : {
+              "operationName" : "explicitName",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "LITERAL",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "number"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                }
+              }, {
+                "httpStatus" : 500,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "javax.xml.soap.SOAPException",
+                    "attributes" : {
+                      "localizedMessage" : {
+                        "attributeName" : "localizedMessage",
+                        "typeRef" : "string",
+                        "required" : false
+                      },
+                      "cause" : {
+                        "attributeName" : "cause",
+                        "typeRef" : "java.lang.Throwable",
+                        "required" : false
+                      },
+                      "stackTrace" : {
+                        "attributeName" : "stackTrace",
+                        "typeRef" : "array<java.lang.StackTraceElement>",
+                        "required" : false
+                      },
+                      "suppressed" : {
+                        "attributeName" : "suppressed",
+                        "typeRef" : "array<java.lang.Throwable>",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "test" : {
+              "operationName" : "test",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "LITERAL",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "string"
+                }
+              } ],
+              "soapInputHeaders" : [ {
+                "type" : {
+                  "typeRef" : "string"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "number"
+                  }
+                } ]
+              } ]
+            },
+            "test2" : {
+              "operationName" : "test2",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "LITERAL",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "soapInputHeaders" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Destination",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                }
+              } ]
+            }
+          }
+        },
+        "WithJRAPIDocAnnotationsService" : {
+          "serviceName" : "WithJRAPIDocAnnotationsService",
+          "serviceDescription" : "Web service description",
+          "methods" : {
+            "foo" : {
+              "operationName" : "foo",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Destination",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo1" : {
+              "operationName" : "foo1",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "soapInputHeaders" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Destination",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo2" : {
+              "operationName" : "foo2",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "methodDescription" : "Web method description",
+              "asynchronous" : true,
+              "soapInputHeaders" : [ {
+                "typeDescription" : "Parameter description",
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Destination",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "Return type description",
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "soapOutputHeaders" : [ {
+                  "typeDescription" : "Parameter description",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ],
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo3" : {
+              "operationName" : "foo3",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "soapOutputHeaders" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo4" : {
+              "operationName" : "foo4",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "methodDescription" : "This is operation description",
+              "asynchronous" : true,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "This is return option description",
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "soapOutputHeaders" : [ {
+                  "typeDescription" : "Description for return type",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo4a" : {
+              "operationName" : "foo4a",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "methodDescription" : "This is operation description",
+              "asynchronous" : true,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "This is return option description",
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "typeDescription" : "Description for return type",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              }, {
+                "httpStatus" : 500,
+                "returnDescription" : "This is second return option description",
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "typeDescription" : "Description of exception type",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+                    "attributes" : {
+                      "faultInfo" : {
+                        "attributeName" : "faultInfo",
+                        "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo4b" : {
+              "operationName" : "foo4b",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "methodDescription" : "Example operation",
+              "asynchronous" : true,
+              "soapInputHeaders" : [ {
+                "typeDescription" : "ID of flight",
+                "required" : true,
+                "type" : {
+                  "typeRef" : "string"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "Expected result of operation",
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "soapOutputHeaders" : [ {
+                  "typeDescription" : "ID of flight",
+                  "type" : {
+                    "typeRef" : "string"
+                  }
+                } ],
+                "returnTypes" : [ {
+                  "typeDescription" : "Represents flight destination",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              }, {
+                "httpStatus" : 500,
+                "returnDescription" : "When flight ID is not valid",
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "typeDescription" : "Business logic exception",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+                    "attributes" : {
+                      "faultInfo" : {
+                        "attributeName" : "faultInfo",
+                        "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "foo6" : {
+              "operationName" : "foo6",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true
+            },
+            "foo7" : {
+              "operationName" : "foo7",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                }
+              }, {
+                "httpStatus" : 500,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+                    "attributes" : {
+                      "faultInfo" : {
+                        "attributeName" : "faultInfo",
+                        "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "uuuuaaaa" : {
+              "operationName" : "uuuuaaaa",
+              "soapBinding" : {
+                "style" : "DOCUMENT",
+                "use" : "ENCODED",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "number"
+                  }
+                } ]
+              }, {
+                "httpStatus" : 500,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+                    "attributes" : {
+                      "faultInfo" : {
+                        "attributeName" : "faultInfo",
+                        "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            }
+          }
+        }
+      }
+    },
+    "http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services/rpc" : {
+      "baseUrl" : "http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services/rpc",
+      "serviceGroupDescription" : "Only RPC web services",
+      "services" : {
+        "MessageRPCStyleService" : {
+          "serviceName" : "MessageRPCStyleService",
+          "methods" : {
+            "rpc" : {
+              "operationName" : "rpc",
+              "soapBinding" : {
+                "style" : "RPC",
+                "use" : "LITERAL",
+                "parameterStyle" : "WRAPPED"
+              },
+              "asynchronous" : true,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Destination",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    }
+                  }
+                }
+              }, {
+                "type" : {
+                  "typeRef" : "string"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "headerParams" : {
+                  "Content-Type" : {
+                    "parameterName" : "Content-Type",
+                    "required" : true,
+                    "options" : [ "application/xml" ]
+                  }
+                },
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "types" : {
+    "org.jrapidoc.example.entity.Destination" : {
+      "typeRef" : "org.jrapidoc.example.entity.Destination",
+      "attributes" : {
+        "name" : {
+          "attributeName" : "name",
+          "typeRef" : "string",
+          "attributeDescription" : "Description of name",
+          "required" : false
+        }
+      }
+    },
+    "string" : {
+      "typeRef" : "string"
+    },
+    "org.jrapidoc.example.exception.AirserviceFault" : {
+      "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+      "attributes" : {
+        "faultInfo" : {
+          "attributeName" : "faultInfo",
+          "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "org.jrapidoc.example.exception.AirserviceException" : {
+      "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+      "attributes" : {
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "number" : {
+      "typeRef" : "number"
+    },
+    "javax.xml.soap.SOAPException" : {
+      "typeRef" : "javax.xml.soap.SOAPException",
+      "attributes" : {
+        "localizedMessage" : {
+          "attributeName" : "localizedMessage",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "cause" : {
+          "attributeName" : "cause",
+          "typeRef" : "java.lang.Throwable",
+          "required" : false
+        },
+        "stackTrace" : {
+          "attributeName" : "stackTrace",
+          "typeRef" : "array<java.lang.StackTraceElement>",
+          "required" : false
+        },
+        "suppressed" : {
+          "attributeName" : "suppressed",
+          "typeRef" : "array<java.lang.Throwable>",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "java.lang.Throwable" : {
+      "typeRef" : "java.lang.Throwable",
+      "attributes" : {
+        "localizedMessage" : {
+          "attributeName" : "localizedMessage",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "cause" : {
+          "attributeName" : "cause",
+          "typeRef" : "java.lang.Throwable",
+          "required" : false
+        },
+        "stackTrace" : {
+          "attributeName" : "stackTrace",
+          "typeRef" : "array<java.lang.StackTraceElement>",
+          "required" : false
+        },
+        "suppressed" : {
+          "attributeName" : "suppressed",
+          "typeRef" : "array<java.lang.Throwable>",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "array<java.lang.StackTraceElement>" : {
+      "typeRef" : "array<java.lang.StackTraceElement>",
+      "includeTypeRef" : "java.lang.StackTraceElement"
+    },
+    "java.lang.StackTraceElement" : {
+      "typeRef" : "java.lang.StackTraceElement",
+      "attributes" : {
+        "fileName" : {
+          "attributeName" : "fileName",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "nativeMethod" : {
+          "attributeName" : "nativeMethod",
+          "typeRef" : "boolean",
+          "required" : false
+        },
+        "methodName" : {
+          "attributeName" : "methodName",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "className" : {
+          "attributeName" : "className",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "lineNumber" : {
+          "attributeName" : "lineNumber",
+          "typeRef" : "number",
+          "required" : false
+        }
+      }
+    },
+    "boolean" : {
+      "typeRef" : "boolean"
+    },
+    "array<java.lang.Throwable>" : {
+      "typeRef" : "array<java.lang.Throwable>",
+      "includeTypeRef" : "java.lang.Throwable"
+    }
+  }
+}

@@ -1,13 +1,13 @@
 package org.jrapidoc.example.custom;
 
 import org.apache.commons.lang3.StringUtils;
-import org.jrapidoc.logger.Logger;
-import org.jrapidoc.model.APIModel;
-import org.jrapidoc.model.Method;
-import org.jrapidoc.model.Service;
-import org.jrapidoc.model.ServiceGroup;
-import org.jrapidoc.model.handler.HandlerException;
-import org.jrapidoc.model.handler.ModelHandler;
+import org.projectodd.jrapidoc.logger.Logger;
+import org.projectodd.jrapidoc.model.APIModel;
+import org.projectodd.jrapidoc.model.Method;
+import org.projectodd.jrapidoc.model.Service;
+import org.projectodd.jrapidoc.model.ServiceGroup;
+import org.projectodd.jrapidoc.model.handler.HandlerException;
+import org.projectodd.jrapidoc.model.handler.ModelHandler;
 
 /**
  * Created by Tomas "sarzwest" Jiricek on 12.4.15.

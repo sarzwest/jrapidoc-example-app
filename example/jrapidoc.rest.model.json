@@ -1,0 +1,1208 @@
+{
+  "customInfo" : {
+    "appVersion" : "1.0",
+    "developerName" : "Sarzwest",
+    "hereCanBePlacedInfinityCustomProperties" : "Hello :-)",
+    "jrapidoc-rest-plugin" : "0.0.1"
+  },
+  "serviceGroups" : {
+    "http://localhost:8080/example/rest" : {
+      "baseUrl" : "http://localhost:8080/example/rest",
+      "serviceGroupDescription" : "Description of service group",
+      "services" : {
+        "annotations" : {
+          "path" : "annotations",
+          "methods" : {
+            "annotations/multiple/responses - PUT" : {
+              "path" : "annotations/multiple/responses",
+              "httpMethodType" : "PUT",
+              "headerParams" : {
+                "requiredHeader" : {
+                  "parameterName" : "requiredHeader",
+                  "parameterDescription" : "Parameter is required",
+                  "required" : true,
+                  "typeRef" : "string"
+                },
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "pathParams" : {
+                "pathParam" : {
+                  "parameterName" : "pathParam",
+                  "parameterDescription" : "Parameter is required",
+                  "required" : true,
+                  "typeRef" : "string"
+                }
+              },
+              "queryParams" : {
+                "notRequiredQuery" : {
+                  "parameterName" : "notRequiredQuery",
+                  "parameterDescription" : "Parameter is not required",
+                  "required" : false,
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "Returns array of DestinationEntity",
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+                    "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+                  }
+                } ]
+              }, {
+                "httpStatus" : 200,
+                "returnDescription" : "Returns map<string,Destination>",
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "map<string,org.jrapidoc.example.entity.Destination>",
+                    "keyTypeRef" : "string",
+                    "valueTypeRef" : "org.jrapidoc.example.entity.Destination"
+                  }
+                } ]
+              }, {
+                "httpStatus" : 403,
+                "returnDescription" : "Throw exception",
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.CustomException",
+                    "attributes" : {
+                      "exceptionEntity" : {
+                        "attributeName" : "exceptionEntity",
+                        "typeRef" : "org.jrapidoc.example.entity.ExceptionEntity",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "annotations/path/example/{id:.+} - PUT" : {
+              "path" : "annotations/path/example/{id:.+}",
+              "httpMethodType" : "PUT",
+              "pathExample" : "annotations/path/example/5",
+              "methodDescription" : "Description of method",
+              "headerParams" : {
+                "requiredHeader" : {
+                  "parameterName" : "requiredHeader",
+                  "parameterDescription" : "Parameter is required",
+                  "required" : true,
+                  "typeRef" : "string"
+                },
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "pathParams" : {
+                "pathParam" : {
+                  "parameterName" : "pathParam",
+                  "parameterDescription" : "Parameter is required",
+                  "required" : true,
+                  "typeRef" : "string"
+                }
+              },
+              "queryParams" : {
+                "notRequiredQuery" : {
+                  "parameterName" : "notRequiredQuery",
+                  "parameterDescription" : "Parameter is not required",
+                  "required" : false,
+                  "typeRef" : "string"
+                }
+              },
+              "matrixParams" : {
+                "matrixParam" : {
+                  "parameterName" : "matrixParam",
+                  "parameterDescription" : "Parameter is not required",
+                  "required" : false,
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "Description of this response",
+                "headerParams" : {
+                  "X-Custom" : {
+                    "parameterName" : "X-Custom",
+                    "typeRef" : "string"
+                  },
+                  "Y-Custom" : {
+                    "parameterName" : "Y-Custom",
+                    "typeRef" : "string"
+                  }
+                },
+                "cookieParams" : {
+                  "token" : {
+                    "parameterName" : "token",
+                    "typeRef" : "string"
+                  }
+                },
+                "returnTypes" : [ {
+                  "typeDescription" : "Description of returned type in response",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            }
+          }
+        },
+        "methods/defined/in/parent" : {
+          "path" : "methods/defined/in/parent",
+          "methods" : {
+            "methods/defined/in/parent/class - PUT" : {
+              "path" : "methods/defined/in/parent/class",
+              "httpMethodType" : "PUT",
+              "methodDescription" : "Description of method",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "matrixParams" : {
+                "matrixParam" : {
+                  "parameterName" : "matrixParam",
+                  "parameterDescription" : "Parameter is not required",
+                  "required" : false,
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "Description of this response",
+                "headerParams" : {
+                  "X-Custom" : {
+                    "parameterName" : "X-Custom",
+                    "typeRef" : "string"
+                  },
+                  "Y-Custom" : {
+                    "parameterName" : "Y-Custom",
+                    "typeRef" : "string"
+                  }
+                },
+                "cookieParams" : {
+                  "token" : {
+                    "parameterName" : "token",
+                    "typeRef" : "string"
+                  }
+                },
+                "returnTypes" : [ {
+                  "typeDescription" : "Description of returned type in response",
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "methods/defined/in/parent/interface - PUT" : {
+              "path" : "methods/defined/in/parent/interface",
+              "httpMethodType" : "PUT",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnDescription" : "Returns array of DestinationEntity",
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+                    "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+                  }
+                } ]
+              }, {
+                "httpStatus" : 200,
+                "returnDescription" : "Returns map<string,Destination>",
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "map<string,org.jrapidoc.example.entity.Destination>",
+                    "keyTypeRef" : "string",
+                    "valueTypeRef" : "org.jrapidoc.example.entity.Destination"
+                  }
+                } ]
+              }, {
+                "httpStatus" : 403,
+                "returnDescription" : "Throw exception",
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.exception.CustomException",
+                    "attributes" : {
+                      "exceptionEntity" : {
+                        "attributeName" : "exceptionEntity",
+                        "typeRef" : "org.jrapidoc.example.entity.ExceptionEntity",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            }
+          }
+        },
+        "more/advanced" : {
+          "path" : "more/advanced",
+          "methods" : {
+            "more/advanced - DELETE" : {
+              "path" : "more/advanced",
+              "httpMethodType" : "DELETE",
+              "headerParams" : {
+                "headerFromSetterMethod" : {
+                  "parameterName" : "headerFromSetterMethod",
+                  "typeRef" : "string"
+                },
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "queryParams" : {
+                "queryparam" : {
+                  "parameterName" : "queryparam",
+                  "typeRef" : "boolean"
+                },
+                "fromStringMethod" : {
+                  "parameterName" : "fromStringMethod",
+                  "typeRef" : "string"
+                }
+              },
+              "matrixParams" : {
+                "matrixparam" : {
+                  "parameterName" : "matrixparam",
+                  "typeRef" : "string"
+                }
+              },
+              "cookieParams" : {
+                "fromParamConverter" : {
+                  "parameterName" : "fromParamConverter",
+                  "typeRef" : "string"
+                }
+              },
+              "formParams" : {
+                "fromConstructor" : {
+                  "parameterName" : "fromConstructor",
+                  "typeRef" : "string"
+                },
+                "fromValueOfMethod" : {
+                  "parameterName" : "fromValueOfMethod",
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "more/advanced/more/designators/{id:.+} - GET" : {
+              "path" : "more/advanced/more/designators/{id:.+}",
+              "httpMethodType" : "GET",
+              "pathExample" : "more/advanced/more/designators/5",
+              "headerParams" : {
+                "headerFromSetterMethod" : {
+                  "parameterName" : "headerFromSetterMethod",
+                  "typeRef" : "string"
+                },
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "queryParams" : {
+                "queryparam" : {
+                  "parameterName" : "queryparam",
+                  "typeRef" : "boolean"
+                },
+                "fromStringMethod" : {
+                  "parameterName" : "fromStringMethod",
+                  "typeRef" : "string"
+                }
+              },
+              "matrixParams" : {
+                "matrixparam" : {
+                  "parameterName" : "matrixparam",
+                  "typeRef" : "string"
+                }
+              },
+              "cookieParams" : {
+                "fromParamConverter" : {
+                  "parameterName" : "fromParamConverter",
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "more/advanced/more/designators/{id:.+} - POST" : {
+              "path" : "more/advanced/more/designators/{id:.+}",
+              "httpMethodType" : "POST",
+              "pathExample" : "more/advanced/more/designators/5",
+              "headerParams" : {
+                "headerFromSetterMethod" : {
+                  "parameterName" : "headerFromSetterMethod",
+                  "typeRef" : "string"
+                },
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "queryParams" : {
+                "queryparam" : {
+                  "parameterName" : "queryparam",
+                  "typeRef" : "boolean"
+                },
+                "fromStringMethod" : {
+                  "parameterName" : "fromStringMethod",
+                  "typeRef" : "string"
+                }
+              },
+              "matrixParams" : {
+                "matrixparam" : {
+                  "parameterName" : "matrixparam",
+                  "typeRef" : "string"
+                }
+              },
+              "cookieParams" : {
+                "fromParamConverter" : {
+                  "parameterName" : "fromParamConverter",
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "more/advanced/more/designators/{id:.+} - PUT" : {
+              "path" : "more/advanced/more/designators/{id:.+}",
+              "httpMethodType" : "PUT",
+              "pathExample" : "more/advanced/more/designators/5",
+              "headerParams" : {
+                "headerFromSetterMethod" : {
+                  "parameterName" : "headerFromSetterMethod",
+                  "typeRef" : "string"
+                },
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "queryParams" : {
+                "queryparam" : {
+                  "parameterName" : "queryparam",
+                  "typeRef" : "boolean"
+                },
+                "fromStringMethod" : {
+                  "parameterName" : "fromStringMethod",
+                  "typeRef" : "string"
+                }
+              },
+              "matrixParams" : {
+                "matrixparam" : {
+                  "parameterName" : "matrixparam",
+                  "typeRef" : "string"
+                }
+              },
+              "cookieParams" : {
+                "fromParamConverter" : {
+                  "parameterName" : "fromParamConverter",
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            }
+          }
+        },
+        "parameterized/type/examples" : {
+          "path" : "parameterized/type/examples",
+          "methods" : {
+            "parameterized/type/examples/foo1 - GET" : {
+              "path" : "parameterized/type/examples/foo1",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "array<string>",
+                  "includeTypeRef" : "string"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "parameterized/type/examples/foo10 - GET" : {
+              "path" : "parameterized/type/examples/foo10",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+                    "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo11 - GET" : {
+              "path" : "parameterized/type/examples/foo11",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+                  "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "parameterized/type/examples/foo12 - GET" : {
+              "path" : "parameterized/type/examples/foo12",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+                    "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo13 - GET" : {
+              "path" : "parameterized/type/examples/foo13",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "java.lang.Object"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "parameterized/type/examples/foo14 - GET" : {
+              "path" : "parameterized/type/examples/foo14",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "java.lang.Object"
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo2 - GET" : {
+              "path" : "parameterized/type/examples/foo2",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "array<string>",
+                    "includeTypeRef" : "string"
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo3 - GET" : {
+              "path" : "parameterized/type/examples/foo3",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "map<string,string>",
+                  "keyTypeRef" : "string",
+                  "valueTypeRef" : "string"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "parameterized/type/examples/foo4 - GET" : {
+              "path" : "parameterized/type/examples/foo4",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "map<string,string>",
+                    "keyTypeRef" : "string",
+                    "valueTypeRef" : "string"
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo5 - GET" : {
+              "path" : "parameterized/type/examples/foo5",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>",
+                  "attributes" : {
+                    "varInWrapper" : {
+                      "attributeName" : "varInWrapper",
+                      "typeRef" : "string",
+                      "required" : false
+                    },
+                    "destO" : {
+                      "attributeName" : "destO",
+                      "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "parameterized/type/examples/foo6 - GET" : {
+              "path" : "parameterized/type/examples/foo6",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>",
+                    "attributes" : {
+                      "varInWrapper" : {
+                        "attributeName" : "varInWrapper",
+                        "typeRef" : "string",
+                        "required" : false
+                      },
+                      "destO" : {
+                        "attributeName" : "destO",
+                        "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo7 - GET" : {
+              "path" : "parameterized/type/examples/foo7",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    },
+                    "id" : {
+                      "attributeName" : "id",
+                      "typeRef" : "number",
+                      "attributeDescription" : "Description of id",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "parameterized/type/examples/foo8 - GET" : {
+              "path" : "parameterized/type/examples/foo8",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "parameterized/type/examples/foo9 - GET" : {
+              "path" : "parameterized/type/examples/foo9",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+                  "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            }
+          }
+        },
+        "simple" : {
+          "path" : "simple",
+          "methods" : {
+            "simple/asynchronous/long/running/process - PUT" : {
+              "path" : "simple/asynchronous/long/running/process",
+              "httpMethodType" : "PUT",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "application/xml" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "application/xml" ]
+                }
+              },
+              "queryParams" : {
+                "q" : {
+                  "parameterName" : "q",
+                  "typeRef" : "boolean"
+                }
+              },
+              "asynchronous" : true,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.Destination",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "simple/get - GET" : {
+              "path" : "simple/get",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "application/xml" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "application/xml" ]
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "array<org.jrapidoc.example.entity.Destination>",
+                    "includeTypeRef" : "org.jrapidoc.example.entity.Destination"
+                  }
+                } ]
+              } ]
+            },
+            "simple/get/{id} - GET" : {
+              "path" : "simple/get/{id}",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "application/xml" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "application/xml", "application/json" ]
+                }
+              },
+              "pathParams" : {
+                "id" : {
+                  "parameterName" : "id",
+                  "typeRef" : "string"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.Destination",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            },
+            "simple/post - POST" : {
+              "path" : "simple/post",
+              "httpMethodType" : "POST",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "application/json" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "application/xml" ]
+                }
+              },
+              "asynchronous" : false,
+              "parameters" : [ {
+                "type" : {
+                  "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+                  "attributes" : {
+                    "name" : {
+                      "attributeName" : "name",
+                      "typeRef" : "string",
+                      "attributeDescription" : "Description of name",
+                      "required" : false
+                    },
+                    "id" : {
+                      "attributeName" : "id",
+                      "typeRef" : "number",
+                      "attributeDescription" : "Description of id",
+                      "required" : false
+                    }
+                  }
+                }
+              } ],
+              "returnOptions" : [ {
+                "httpStatus" : 204
+              } ]
+            },
+            "simple/sub/resource/locator/some/path - GET" : {
+              "path" : "simple/sub/resource/locator/some/path",
+              "httpMethodType" : "GET",
+              "headerParams" : {
+                "Accept" : {
+                  "parameterName" : "Accept",
+                  "options" : [ "*/*" ]
+                },
+                "Content-Type" : {
+                  "parameterName" : "Content-Type",
+                  "options" : [ "*/*" ]
+                },
+                "h" : {
+                  "parameterName" : "h",
+                  "typeRef" : "number"
+                }
+              },
+              "asynchronous" : false,
+              "returnOptions" : [ {
+                "httpStatus" : 200,
+                "returnTypes" : [ {
+                  "type" : {
+                    "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+                    "attributes" : {
+                      "name" : {
+                        "attributeName" : "name",
+                        "typeRef" : "string",
+                        "attributeDescription" : "Description of name",
+                        "required" : false
+                      },
+                      "id" : {
+                        "attributeName" : "id",
+                        "typeRef" : "number",
+                        "attributeDescription" : "Description of id",
+                        "required" : false
+                      }
+                    }
+                  }
+                } ]
+              } ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "types" : {
+    "array<org.jrapidoc.example.entity.DestinationEntity>" : {
+      "typeRef" : "array<org.jrapidoc.example.entity.DestinationEntity>",
+      "includeTypeRef" : "org.jrapidoc.example.entity.DestinationEntity"
+    },
+    "org.jrapidoc.example.entity.DestinationEntity" : {
+      "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+      "attributes" : {
+        "name" : {
+          "attributeName" : "name",
+          "typeRef" : "string",
+          "attributeDescription" : "Description of name",
+          "required" : false
+        },
+        "id" : {
+          "attributeName" : "id",
+          "typeRef" : "number",
+          "attributeDescription" : "Description of id",
+          "required" : false
+        }
+      }
+    },
+    "string" : {
+      "typeRef" : "string"
+    },
+    "number" : {
+      "typeRef" : "number"
+    },
+    "map<string,org.jrapidoc.example.entity.Destination>" : {
+      "typeRef" : "map<string,org.jrapidoc.example.entity.Destination>",
+      "keyTypeRef" : "string",
+      "valueTypeRef" : "org.jrapidoc.example.entity.Destination"
+    },
+    "org.jrapidoc.example.entity.Destination" : {
+      "typeRef" : "org.jrapidoc.example.entity.Destination",
+      "attributes" : {
+        "name" : {
+          "attributeName" : "name",
+          "typeRef" : "string",
+          "attributeDescription" : "Description of name",
+          "required" : false
+        }
+      }
+    },
+    "org.jrapidoc.example.exception.CustomException" : {
+      "typeRef" : "org.jrapidoc.example.exception.CustomException",
+      "attributes" : {
+        "exceptionEntity" : {
+          "attributeName" : "exceptionEntity",
+          "typeRef" : "org.jrapidoc.example.entity.ExceptionEntity",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "org.jrapidoc.example.entity.ExceptionEntity" : {
+      "typeRef" : "org.jrapidoc.example.entity.ExceptionEntity",
+      "attributes" : {
+        "number" : {
+          "attributeName" : "number",
+          "typeRef" : "number",
+          "required" : false
+        },
+        "something" : {
+          "attributeName" : "something",
+          "typeRef" : "boolean",
+          "required" : false
+        },
+        "desc" : {
+          "attributeName" : "desc",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "boolean" : {
+      "typeRef" : "boolean"
+    },
+    "array<org.jrapidoc.example.entity.Destination>" : {
+      "typeRef" : "array<org.jrapidoc.example.entity.Destination>",
+      "includeTypeRef" : "org.jrapidoc.example.entity.Destination"
+    },
+    "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>" : {
+      "typeRef" : "org.jrapidoc.example.entity.Wrapper<org.jrapidoc.example.entity.DestinationEntity>",
+      "attributes" : {
+        "varInWrapper" : {
+          "attributeName" : "varInWrapper",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "destO" : {
+          "attributeName" : "destO",
+          "typeRef" : "org.jrapidoc.example.entity.DestinationEntity",
+          "required" : false
+        }
+      }
+    },
+    "map<string,string>" : {
+      "typeRef" : "map<string,string>",
+      "keyTypeRef" : "string",
+      "valueTypeRef" : "string"
+    },
+    "array<string>" : {
+      "typeRef" : "array<string>",
+      "includeTypeRef" : "string"
+    },
+    "java.lang.Object" : {
+      "typeRef" : "java.lang.Object"
+    }
+  }
+}

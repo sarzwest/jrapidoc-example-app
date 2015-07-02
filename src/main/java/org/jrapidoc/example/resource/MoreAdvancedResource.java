@@ -1,6 +1,6 @@
 package org.jrapidoc.example.resource;
 
-import org.jrapidoc.annotation.rest.DocPathExample;
+import org.projectodd.jrapidoc.annotation.rest.DocPathExample;
 import org.jrapidoc.example.bean.FromStringBean;
 import org.jrapidoc.example.bean.FromStringConstructorBean;
 import org.jrapidoc.example.bean.ParamConverBean;
