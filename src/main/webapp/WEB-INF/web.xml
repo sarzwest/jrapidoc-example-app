@@ -66,7 +66,6 @@
         <param-name>resteasy.resources</param-name>
         <param-value>
             org.jrapidoc.example.resource.SimpleResource,
-            org.jrapidoc.example.resource.AnotherResource,
             org.jrapidoc.example.resource.InheritanceExampleResource,
             org.jrapidoc.example.resource.MoreAdvancedResource,
             org.jrapidoc.example.resource.ParameterizedTypeResource,
