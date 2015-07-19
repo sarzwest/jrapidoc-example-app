@@ -3,7 +3,7 @@
     "appVersion" : "1.0",
     "developerName" : "Sarzwest",
     "hereCanBePlacedInfinityCustomProperties" : "Hello :-)",
-    "jrapidoc-soap-plugin" : "0.0.1"
+    "jrapidoc-soap-plugin" : "1.0.0-SNAPSHOT"
   },
   "serviceGroups" : {
     "http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services" : {
@@ -751,31 +751,6 @@
     "string" : {
       "typeRef" : "string"
     },
-    "org.jrapidoc.example.exception.AirserviceFault" : {
-      "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
-      "attributes" : {
-        "faultInfo" : {
-          "attributeName" : "faultInfo",
-          "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
-          "required" : false
-        },
-        "message" : {
-          "attributeName" : "message",
-          "typeRef" : "string",
-          "required" : false
-        }
-      }
-    },
-    "org.jrapidoc.example.exception.AirserviceException" : {
-      "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
-      "attributes" : {
-        "message" : {
-          "attributeName" : "message",
-          "typeRef" : "string",
-          "required" : false
-        }
-      }
-    },
     "number" : {
       "typeRef" : "number"
     },
@@ -879,6 +854,31 @@
     "array<java.lang.Throwable>" : {
       "typeRef" : "array<java.lang.Throwable>",
       "includeTypeRef" : "java.lang.Throwable"
+    },
+    "org.jrapidoc.example.exception.AirserviceFault" : {
+      "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+      "attributes" : {
+        "faultInfo" : {
+          "attributeName" : "faultInfo",
+          "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "org.jrapidoc.example.exception.AirserviceException" : {
+      "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+      "attributes" : {
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
     }
   }
 }

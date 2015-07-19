@@ -4,7 +4,7 @@
 
     <groupId>org.jrapidoc</groupId>
     <artifactId>jrapidoc-example-app</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>example-app</name>
@@ -12,7 +12,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jrapidoc.version>0.0.1</jrapidoc.version>
+        <jrapidoc.version>1.0.0-SNAPSHOT</jrapidoc.version>
     </properties>
 
     <dependencies>
@@ -146,6 +146,8 @@
                         <developerName>Sarzwest</developerName>
                         <hereCanBePlacedInfinityCustomProperties>Hello :-)</hereCanBePlacedInfinityCustomProperties>
                     </custom>
+                    <!--optional-->
+                    <modelTarget>${project.build.directory}/generated-sources/jrapidoc/jrapidoc.soap.model.json</modelTarget>
                     <groups>
                         <group>
                             <baseUrl>http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services</baseUrl>
@@ -208,6 +210,8 @@
                         <developerName>Sarzwest</developerName>
                         <hereCanBePlacedInfinityCustomProperties>Hello :-)</hereCanBePlacedInfinityCustomProperties>
                     </custom>
+                    <!--optional-->
+                    <modelTarget>${project.build.directory}/generated-sources/jrapidoc/jrapidoc.rest.model.json</modelTarget>
                     <groups>
                         <group>
                             <baseUrl>http://localhost:8080/example/rest</baseUrl>
