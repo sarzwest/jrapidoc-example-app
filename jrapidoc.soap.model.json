@@ -3,7 +3,7 @@
     "appVersion" : "1.0",
     "developerName" : "Sarzwest",
     "hereCanBePlacedInfinityCustomProperties" : "Hello :-)",
-    "jrapidoc-soap-plugin" : "1.0-SNAPSHOT"
+    "jrapidoc-soap-plugin" : "1.0.0-SNAPSHOT"
   },
   "serviceGroups" : {
     "http://localhost:8080/jrapidoc-example-app-1.0/jaxws/services" : {
@@ -57,14 +57,14 @@
                   "type" : {
                     "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
                     "attributes" : {
-                      "message" : {
-                        "attributeName" : "message",
-                        "typeRef" : "string",
-                        "required" : false
-                      },
                       "faultInfo" : {
                         "attributeName" : "faultInfo",
                         "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
                         "required" : false
                       }
                     }
@@ -107,16 +107,6 @@
                   "type" : {
                     "typeRef" : "javax.xml.soap.SOAPException",
                     "attributes" : {
-                      "message" : {
-                        "attributeName" : "message",
-                        "typeRef" : "string",
-                        "required" : false
-                      },
-                      "suppressed" : {
-                        "attributeName" : "suppressed",
-                        "typeRef" : "array<java.lang.Throwable>",
-                        "required" : false
-                      },
                       "localizedMessage" : {
                         "attributeName" : "localizedMessage",
                         "typeRef" : "string",
@@ -130,6 +120,16 @@
                       "stackTrace" : {
                         "attributeName" : "stackTrace",
                         "typeRef" : "array<java.lang.StackTraceElement>",
+                        "required" : false
+                      },
+                      "suppressed" : {
+                        "attributeName" : "suppressed",
+                        "typeRef" : "array<java.lang.Throwable>",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
                         "required" : false
                       }
                     }
@@ -476,14 +476,14 @@
                   "type" : {
                     "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
                     "attributes" : {
-                      "message" : {
-                        "attributeName" : "message",
-                        "typeRef" : "string",
-                        "required" : false
-                      },
                       "faultInfo" : {
                         "attributeName" : "faultInfo",
                         "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
                         "required" : false
                       }
                     }
@@ -552,14 +552,14 @@
                   "type" : {
                     "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
                     "attributes" : {
-                      "message" : {
-                        "attributeName" : "message",
-                        "typeRef" : "string",
-                        "required" : false
-                      },
                       "faultInfo" : {
                         "attributeName" : "faultInfo",
                         "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
                         "required" : false
                       }
                     }
@@ -606,14 +606,14 @@
                   "type" : {
                     "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
                     "attributes" : {
-                      "message" : {
-                        "attributeName" : "message",
-                        "typeRef" : "string",
-                        "required" : false
-                      },
                       "faultInfo" : {
                         "attributeName" : "faultInfo",
                         "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
                         "required" : false
                       }
                     }
@@ -656,14 +656,14 @@
                   "type" : {
                     "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
                     "attributes" : {
-                      "message" : {
-                        "attributeName" : "message",
-                        "typeRef" : "string",
-                        "required" : false
-                      },
                       "faultInfo" : {
                         "attributeName" : "faultInfo",
                         "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+                        "required" : false
+                      },
+                      "message" : {
+                        "attributeName" : "message",
+                        "typeRef" : "string",
                         "required" : false
                       }
                     }
@@ -737,37 +737,6 @@
     }
   },
   "types" : {
-    "number" : {
-      "typeRef" : "number"
-    },
-    "org.jrapidoc.example.exception.AirserviceFault" : {
-      "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
-      "attributes" : {
-        "message" : {
-          "attributeName" : "message",
-          "typeRef" : "string",
-          "required" : false
-        },
-        "faultInfo" : {
-          "attributeName" : "faultInfo",
-          "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
-          "required" : false
-        }
-      }
-    },
-    "org.jrapidoc.example.exception.AirserviceException" : {
-      "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
-      "attributes" : {
-        "message" : {
-          "attributeName" : "message",
-          "typeRef" : "string",
-          "required" : false
-        }
-      }
-    },
-    "string" : {
-      "typeRef" : "string"
-    },
     "org.jrapidoc.example.entity.Destination" : {
       "typeRef" : "org.jrapidoc.example.entity.Destination",
       "attributes" : {
@@ -779,19 +748,15 @@
         }
       }
     },
+    "string" : {
+      "typeRef" : "string"
+    },
+    "number" : {
+      "typeRef" : "number"
+    },
     "javax.xml.soap.SOAPException" : {
       "typeRef" : "javax.xml.soap.SOAPException",
       "attributes" : {
-        "message" : {
-          "attributeName" : "message",
-          "typeRef" : "string",
-          "required" : false
-        },
-        "suppressed" : {
-          "attributeName" : "suppressed",
-          "typeRef" : "array<java.lang.Throwable>",
-          "required" : false
-        },
         "localizedMessage" : {
           "attributeName" : "localizedMessage",
           "typeRef" : "string",
@@ -805,6 +770,16 @@
         "stackTrace" : {
           "attributeName" : "stackTrace",
           "typeRef" : "array<java.lang.StackTraceElement>",
+          "required" : false
+        },
+        "suppressed" : {
+          "attributeName" : "suppressed",
+          "typeRef" : "array<java.lang.Throwable>",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
           "required" : false
         }
       }
@@ -812,16 +787,6 @@
     "java.lang.Throwable" : {
       "typeRef" : "java.lang.Throwable",
       "attributes" : {
-        "message" : {
-          "attributeName" : "message",
-          "typeRef" : "string",
-          "required" : false
-        },
-        "suppressed" : {
-          "attributeName" : "suppressed",
-          "typeRef" : "array<java.lang.Throwable>",
-          "required" : false
-        },
         "localizedMessage" : {
           "attributeName" : "localizedMessage",
           "typeRef" : "string",
@@ -835,6 +800,16 @@
         "stackTrace" : {
           "attributeName" : "stackTrace",
           "typeRef" : "array<java.lang.StackTraceElement>",
+          "required" : false
+        },
+        "suppressed" : {
+          "attributeName" : "suppressed",
+          "typeRef" : "array<java.lang.Throwable>",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
           "required" : false
         }
       }
@@ -851,16 +826,6 @@
           "typeRef" : "string",
           "required" : false
         },
-        "lineNumber" : {
-          "attributeName" : "lineNumber",
-          "typeRef" : "number",
-          "required" : false
-        },
-        "className" : {
-          "attributeName" : "className",
-          "typeRef" : "string",
-          "required" : false
-        },
         "nativeMethod" : {
           "attributeName" : "nativeMethod",
           "typeRef" : "boolean",
@@ -869,6 +834,16 @@
         "methodName" : {
           "attributeName" : "methodName",
           "typeRef" : "string",
+          "required" : false
+        },
+        "className" : {
+          "attributeName" : "className",
+          "typeRef" : "string",
+          "required" : false
+        },
+        "lineNumber" : {
+          "attributeName" : "lineNumber",
+          "typeRef" : "number",
           "required" : false
         }
       }
@@ -879,6 +854,31 @@
     "array<java.lang.Throwable>" : {
       "typeRef" : "array<java.lang.Throwable>",
       "includeTypeRef" : "java.lang.Throwable"
+    },
+    "org.jrapidoc.example.exception.AirserviceFault" : {
+      "typeRef" : "org.jrapidoc.example.exception.AirserviceFault",
+      "attributes" : {
+        "faultInfo" : {
+          "attributeName" : "faultInfo",
+          "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+          "required" : false
+        },
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
+    },
+    "org.jrapidoc.example.exception.AirserviceException" : {
+      "typeRef" : "org.jrapidoc.example.exception.AirserviceException",
+      "attributes" : {
+        "message" : {
+          "attributeName" : "message",
+          "typeRef" : "string",
+          "required" : false
+        }
+      }
     }
   }
 }

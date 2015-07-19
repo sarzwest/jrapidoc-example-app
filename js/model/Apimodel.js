@@ -1,6 +1,3 @@
-/**
- * Created by Tomas "sarzwest" Jiricek on 21.3.15.
- */
 var ApiModel = function () {
     this.modelJSON;
 };
@@ -13,9 +10,9 @@ ApiModel.prototype.loadModel = function (modelUrl) {
     var stateChanged = function (caller) {
         if (this.readyState === 4) {
             if (this.status == 200) {
-//                Logger.success("Retrieving model finished with http status: OK " + this.status);
+                //                Logger.success("Retrieving model finished with http status: OK " + this.status);
             } else {
-//                Logger.error("Retrieving model finished with http status: " + this.status);
+                //                Logger.error("Retrieving model finished with http status: " + this.status);
                 throw new CaughtException("Retrieving model finished with http status: " + this.status);
             }
             var modelJSON = caller.checkAndGetModel(this.responseText);
@@ -67,7 +64,7 @@ ApiModel.prototype.replacePropertyNames = function (modelJSON) {
         delete modelJSON[key];
         if (newKey != null) {
             modelJSON[newKey] = value;
-        }else{
+        } else {
             modelJSON[key] = value;
         }
     }
@@ -76,4 +73,3 @@ ApiModel.prototype.replacePropertyNames = function (modelJSON) {
 ApiModel.prototype.setModelJSON = function (modelJSON) {
     this.modelJSON = modelJSON;
 };
-
