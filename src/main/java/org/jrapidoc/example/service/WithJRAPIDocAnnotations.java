@@ -1,7 +1,7 @@
 package org.jrapidoc.example.service;
 
 import org.projectodd.jrapidoc.annotation.DocDescription;
-import org.projectodd.jrapidoc.annotation.rest.DocIsRequired;
+import org.projectodd.jrapidoc.annotation.DocIsRequired;
 import org.projectodd.jrapidoc.annotation.soap.DocReturn;
 import org.projectodd.jrapidoc.annotation.soap.DocReturns;
 import org.jrapidoc.example.entity.Destination;
