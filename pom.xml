@@ -4,7 +4,7 @@
 
     <groupId>org.jrapidoc</groupId>
     <artifactId>jrapidoc-example-app</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.5.0.Final</version>
     <packaging>war</packaging>
 
     <name>example-app</name>
@@ -12,7 +12,7 @@
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jrapidoc.version>1.0.0-SNAPSHOT</jrapidoc.version>
+        <jrapidoc.version>0.5.0.Final</jrapidoc.version>
     </properties>
 
     <dependencies>
